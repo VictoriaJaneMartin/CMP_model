@@ -1,0 +1,16 @@
+executable            = reco.sh
+# this gives you index for queue 10 it will go 0..9
+arguments 	      = $(ProcId)
+output                = reco.$(ClusterId).$(ProcId).out
+error                 = reco.$(ClusterId).$(ProcId).err
+log                   = reco.$(ClusterId).$(ProcId).log
+# suppress output file transfer to submission dir (apart from out/err/log)
+transfer_output_files = ""
+# here: choose how long your job should run
+# short jobs have more nodes available and will be scheduled faster
+## longlunch    = 2 hours
+## workday      = 8 hours
++JobFlavour 	      = "workday"
+# this will submitt 10 jobs with $(ProcId) 0..9
+queue 10
+
