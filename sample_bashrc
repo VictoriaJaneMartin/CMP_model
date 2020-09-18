@@ -92,10 +92,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -116,18 +112,19 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-alias la='ls -a'
-
-export WORK=/afs/cern.ch/work/l/lprincip
-export RUCIO_ACCOUNT=lprincip
+########################################################################
+###                     NEEDED FOR CMP MODEL SIMULATION              ###
+########################################################################
+export RUCIO_ACCOUNT=$USER
 export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
 export ALRB_TutorialData=/afs/cern.ch/atlas/project/PAT/tutorial/cern-jan2018/
 alias setupATLAS='source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh'
+
+# User defined bash functions
 source ~/.functions.sh
 
-# Set up rucio
+# Run rucio_init to set up rucio
 alias rucio_init='lsetup rucio; voms-proxy-init -voms atlas'
+
+# Set up Athena
 setupATLAS
-alias cernbox='cd /eos/user/l/lprincip'
-export CERNBOX='/eos/user/l/lprincip'
