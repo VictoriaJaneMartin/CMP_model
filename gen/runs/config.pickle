@@ -1,0 +1,12 @@
+(iPyJobTransformsCore.runargs
+RunArguments
+p1
+(dp2
+S'maxeventsstrategy'
+p3
+S'ABORT'
+p4
+sS'minevents'
+p5
+I5000
+sb.
