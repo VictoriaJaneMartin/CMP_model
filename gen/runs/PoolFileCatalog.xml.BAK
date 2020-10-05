@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- Edited By POOL -->
+<!DOCTYPE POOLFILECATALOG SYSTEM "InMemory">
+<POOLFILECATALOG>
+  <File ID="73BB1F42-2CBF-8D4D-BFDD-17E6A00F8273">
+    <physical>
+      <pfn filetype="ROOT_All" name="EVNT.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+</POOLFILECATALOG>
