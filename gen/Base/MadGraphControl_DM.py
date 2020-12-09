@@ -86,11 +86,15 @@ newlhe = open(process_dir+'/Events/'+runName+'/unweighted_events2.lhe','w')
 
 
 init = True
+lhacodes = ['200001','5000001','200000','200002','200003','200004']
+MC_codes = ['1000024','1000037','1000022','1000012','1000014','1000016'] 
+
 
 for line in oldlhe:
 	if init==True:
-		if '200001' in line:
-			line = line.replace('200001','1000024')
+		for x in range(len(lhacodes)):
+			if lhacodes[x] in line:
+				line = line.replace(lhacodes[x],MC_codes[x])
 		newlhe.write(line)
 		if '</init>' in line:
 			init = False
@@ -99,14 +103,65 @@ for line in oldlhe:
 		columns=newline.split()
 		pdgid=columns[0]
 	
-		if (pdgid == '-200001'):
-			part1 = ' -1000024'
+		if (pdgid == '-'+lhacodes[0]):
+			part1 = ' -'+lhacodes[0]
 			part2 = line[10:]
 			newlhe.write(part1+part2)
-		elif (pdgid == '200001'):
-			part1 = '  1000024'
+		elif (pdgid == lhacodes[0]):
+			part1 = '  '+lhacodes[0]
 			part2 = line[10:]
 			newlhe.write(part1+part2)
+
+
+                elif (pdgid == '-'+lhacodes[1]):    
+                        part1 = ' -'+lhacodes[1]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+                elif (pdgid == lhacodes[1]):
+                        part1 = '  '+lhacodes[1]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+
+
+                elif (pdgid == '-'+lhacodes[2]):    
+                        part1 = ' -'+lhacodes[2]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+                elif (pdgid == lhacodes[2]):
+                        part1 = '  '+lhacodes[2]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+
+
+                elif (pdgid == '-'+lhacodes[3]):    
+                        part1 = ' -'+lhacodes[3]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+                elif (pdgid == lhacodes[3]):
+                        part1 = '  '+lhacodes[3]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+
+
+                elif (pdgid == '-'+lhacodes[4]):    
+                        part1 = ' -'+lhacodes[4]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+                elif (pdgid == lhacodes[4]):
+                        part1 = '  '+lhacodes[4]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+
+
+                elif (pdgid == '-'+lhacodes[5]):    
+                        part1 = ' -'+lhacodes[5]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+                elif (pdgid == lhacodes[5]):
+                        part1 = '  '+lhacodes[5]
+                        part2 = line[10:]  
+                        newlhe.write(part1+part2)
+
 		else:
 			newlhe.write(line)
 				
