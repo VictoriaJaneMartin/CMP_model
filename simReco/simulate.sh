@@ -11,11 +11,11 @@ export preExec2="EVNTtoHITS:simFlags.ExtraParticlesPDGTABLE='extra.mod'"
 export preExec3="EVNTtoHITS:simFlags.TRTRangeCut=30.0;simFlags.TightMuonStepping=True"
 export preInclude="EVNTtoHITS:SimulationJobOptions/preInclude.BeamPipeKill.py,SimulationJobOptions/preInclude.FrozenShowersFCalOnly.py,SimulationJobOptions/preInclude.ExtraParticles.py"
 export INPUT_LOCAL=""
-export INPUT=user.lprincip:20200304run01.gen.dataset
+export INPUT=user.jdykstra:genProcess.gen.dataset
 export OUTPUT_LOCAL="HITS.pool.root"
-export OUTPUT=user.lprincip.20200311_1000evt_01
+export OUTPUT=user.jdykstra.20200311_1000evt_01
 
-export DATAPATH=/afs/cern.ch/user/l/lprincip/public/workingDM/simReco/data:$DATAPATH
+export DATAPATH=/afs/cern.ch/user/j/jdykstra/public/CMP_model/simReco/data:$DATAPATH
 
 
 
@@ -47,7 +47,7 @@ else
 
     if [[ -z $INPUT_LOCAL ]]; then
         INPUT_LOCAL="EVNT.pool.root"
-        cp /afs/cern.ch/user/l/lprincip/public/workingDM/gen/20200304run01/EVNT.pool.root ./
+        cp /afs/cern.ch/user/j/jdykstra/public/CMP_model/gen/genProcess/EVNT.pool.root ./
     fi
 
 	Sim_tf.py \
