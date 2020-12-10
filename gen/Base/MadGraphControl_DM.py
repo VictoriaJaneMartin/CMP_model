@@ -89,33 +89,32 @@ init = True
 lhacodes = ['200001','5000001','200000','200002','200003','200004']
 MC_codes = ['1000024','1000037','1000022','1000012','1000014','1000016']
 
-
 for line in oldlhe:
-	if init==True:
-		for x in range(len(lhacodes)):
-			if lhacodes[x] in line:
-				line = line.replace(lhacodes[x],MC_codes[x])
-		newlhe.write(line)
-		if '</init>' in line:
-			init = False
-	else:
-		newline=line.rstrip('\n')
-		columns=newline.split()
-		pdgid=columns[0]
-        	no_change = True
-	    	for old_particle, new_particle in zip(lhacodes,MC_codes):
-			if (pdgid == '-'+old_particle):
-				part1 = ' -'+new_particle
-				part2 = line[10:]
-    				newlhe.write(part1+part2)
-               	 		no_change = False
-			elif (pdgid == old_particle):
-    				part1 = '  '+new_particle
-    				part2 = line[10:]
-    				newlhe.write(part1+part2)
-				no_change = False
-		if no_change:
-			newlhe.write(line)
+    if init==True:
+        for x in range(len(lhacodes)):
+            if lhacodes[x] in line:
+                line = line.replace(lhacodes[x],MC_codes[x])
+        newlhe.write(line)
+        if '</init>' in line:
+            init = False
+    else:
+        newline=line.rstrip('\n')
+        columns=newline.split()
+        pdgid=columns[0]
+        no_change=True
+        for old_particle, new_particle in zip(lhacodes,Mc_codes):
+            if (pdgid=='-'+old_particle):
+                part1=' -'+new_particle
+                part2= line[10:]
+                newlhe.write(part1+part2)
+                no_change=False
+            elif(pdgid==old_particle):
+                part1='  '+new_particle
+                part2=line[10:]
+                newlhe.write(part1+part2)
+                no_change=False
+        if no_change:
+            newlhe.write(line)
 
 
 oldlhe.close()
