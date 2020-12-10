@@ -102,7 +102,7 @@ for line in oldlhe:
         columns=newline.split()
         pdgid=columns[0]
         no_change=True
-        for old_particle, new_particle in zip(lhacodes,Mc_codes):
+        for old_particle, new_particle in zip(lhacodes,MC_codes):
             if (pdgid=='-'+old_particle):
                 part1=' -'+new_particle
                 part2= line[10:]
