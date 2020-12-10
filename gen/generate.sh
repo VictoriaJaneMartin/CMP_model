@@ -10,7 +10,7 @@ outputEVNTFile=EVNT.pool.root
 
 
 workingDir=`pwd`
-baseDir=$WORK/public/CMP_model/gen/Base
+baseDir=Base
 dirName=$1
 
 while [ -z $dirName ]
