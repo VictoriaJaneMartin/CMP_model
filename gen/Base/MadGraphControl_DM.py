@@ -114,8 +114,8 @@ for line in oldlhe:
     				part2 = line[10:]
     				newlhe.write(part1+part2)
 				no_change = False
-			if no_change:
-				newlhe.write(line)
+		if no_change:
+			newlhe.write(line)
 
 
 oldlhe.close()
