@@ -26,7 +26,7 @@ else:
 mgproc="generate p p > ~chi+ ~chi-"
 name='DM'
 process="pp>DM"
-    
+
 fcard = open('proc_card_mg5.dat','w')
 fcard.write("""
 import model sm
@@ -44,7 +44,7 @@ define nn~ nn1~ nn2~ nn3~
 output -f
 """)
 fcard.close()
-    
+
 extras = {'pdlabel'        : "'lhapdf'",
           'lhaid'          : 260000,
 #          'parton_shower'  :'PYTHIA8',
@@ -87,7 +87,7 @@ newlhe = open(process_dir+'/Events/'+runName+'/unweighted_events2.lhe','w')
 
 init = True
 lhacodes = ['200001','5000001','200000','200002','200003','200004']
-MC_codes = ['1000024','1000037','1000022','1000012','1000014','1000016'] 
+MC_codes = ['1000024','1000037','1000022','1000012','1000014','1000016']
 
 
 for line in oldlhe:
@@ -102,72 +102,24 @@ for line in oldlhe:
 		newline=line.rstrip('\n')
 		columns=newline.split()
 		pdgid=columns[0]
-	
-		if (pdgid == '-'+lhacodes[0]):
-			part1 = ' -'+lhacodes[0]
-			part2 = line[10:]
-			newlhe.write(part1+part2)
-		elif (pdgid == lhacodes[0]):
-			part1 = '  '+lhacodes[0]
-			part2 = line[10:]
-			newlhe.write(part1+part2)
+        	no_change = True
+	    	for old_particle, new_particle in zip(lhacodes,MC_codes):
+			if (pdgid == '-'+old_particle):
+				part1 = ' -'+new_particle
+				part2 = line[10:]
+    				newlhe.write(part1+part2)
+               	 	no_change = False
+			elif (pdgid == old_particle):
+    				part1 = '  '+new_particle
+    				part2 = line[10:]
+    				newlhe.write(part1+part2)
+				no_change = False
+			if no_change:
+				newlhe.write(line)
 
-
-                elif (pdgid == '-'+lhacodes[1]):    
-                        part1 = ' -'+lhacodes[1]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-                elif (pdgid == lhacodes[1]):
-                        part1 = '  '+lhacodes[1]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-
-
-                elif (pdgid == '-'+lhacodes[2]):    
-                        part1 = ' -'+lhacodes[2]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-                elif (pdgid == lhacodes[2]):
-                        part1 = '  '+lhacodes[2]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-
-
-                elif (pdgid == '-'+lhacodes[3]):    
-                        part1 = ' -'+lhacodes[3]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-                elif (pdgid == lhacodes[3]):
-                        part1 = '  '+lhacodes[3]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-
-
-                elif (pdgid == '-'+lhacodes[4]):    
-                        part1 = ' -'+lhacodes[4]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-                elif (pdgid == lhacodes[4]):
-                        part1 = '  '+lhacodes[4]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-
-
-                elif (pdgid == '-'+lhacodes[5]):    
-                        part1 = ' -'+lhacodes[5]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-                elif (pdgid == lhacodes[5]):
-                        part1 = '  '+lhacodes[5]
-                        part2 = line[10:]  
-                        newlhe.write(part1+part2)
-
-		else:
-			newlhe.write(line)
-				
 
 oldlhe.close()
-newlhe.close()	
+newlhe.close()
 
 zip1 = subprocess.Popen(['gzip',process_dir+'/Events/'+runName+'/unweighted_events2.lhe'])
 zip1.wait()
@@ -182,18 +134,18 @@ if 'ATHENA_PROC_NUMBER' in os.environ:
     opts.nprocs = 0
 runArgs.inputGeneratorFile=runName+'._00001.events.tar.gz'
 
-###### 
+######
 ## shower settings: if you change these to another shower eg Hw++,
-## make sure you update subtraction term ('parton_shower'  :'PYTHIA8') 
+## make sure you update subtraction term ('parton_shower'  :'PYTHIA8')
 include("MC15JobOptions/Pythia8_A14_NNPDF23LO_EvtGen_Common.py")
-#include("MC15JobOptions/Pythia8_aMcAtNlo.py") 
+#include("MC15JobOptions/Pythia8_aMcAtNlo.py")
 include("MC15JobOptions/Pythia8_SMHiggs125_inc.py")
 ## don't include shower weights, see ATLMCPROD-6135
 #include("MC15JobOptions/Pythia8_ShowerWeights.py")
 include("MC15JobOptions/Pythia8_MadGraph.py")
 
 
-# Chinew is non-interacting                                                                                                                                                                                                   
+# Chinew is non-interacting
 bonus_file = open('pdg_extras.dat','w')
 bonus_file.write('200001 ~Chi+ 200.0 (GeV/c) fermion ~Chi+ 0\n')
 bonus_file.write('-200001 ~Chi- 200.0 (GeV/c) fermion ~Chi- 0\n')
@@ -207,4 +159,3 @@ genSeq.Pythia8.Commands += ["Main:timesAllowErrors = 60000"]
 testSeq.TestHepMC.MaxTransVtxDisp = 100000000 #in mm
 testSeq.TestHepMC.MaxVtxDisp = 100000000 #in mm
 testSeq.TestHepMC.MaxNonG4Energy = 100000000 #in MeV
-
