@@ -10,7 +10,7 @@ outputEVNTFile=EVNT.pool.root
 
 
 workingDir=`pwd`
-baseDir=$WORK/private/workingDM/gen/Base
+baseDir=Base
 dirName=$1
 
 while [ -z $dirName ]
