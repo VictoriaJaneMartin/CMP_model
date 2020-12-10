@@ -108,7 +108,7 @@ for line in oldlhe:
 				part1 = ' -'+new_particle
 				part2 = line[10:]
     				newlhe.write(part1+part2)
-               	 	no_change = False
+               	 		no_change = False
 			elif (pdgid == old_particle):
     				part1 = '  '+new_particle
     				part2 = line[10:]
