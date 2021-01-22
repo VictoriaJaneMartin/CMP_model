@@ -172,7 +172,6 @@ StatusCode AnalysisAlg::execute()
       }
 
     }
-  }
     if (1000022 == abs(p->pdgId()))
     {
       if (p->status() == 1)
