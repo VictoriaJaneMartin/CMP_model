@@ -86,8 +86,8 @@ newlhe = open(process_dir+'/Events/'+runName+'/unweighted_events2.lhe','w')
 
 
 init = True
-lhacodes = ['200001','5000001','200000','200002','200003','200004']
-MC_codes = ['1000024','1000037','1000022','1000012','1000014','1000016']
+lhacodes = ['200001','5000001','200000','200002','200003','200004',       '-200001','-5000001','-200000','-200002','-200003','-200004']
+MC_codes = ['  1000024','  1000037','  1000022','  1000012','  1000014',' 1000016',  ' -1000024',' -1000037','  1000022',' -1000012',' -1000014',' -1000016']
 
 for line in oldlhe:
     if init==True:
@@ -103,13 +103,8 @@ for line in oldlhe:
         pdgid=columns[0]
         no_change=True
         for old_particle, new_particle in zip(lhacodes,MC_codes):
-            if (pdgid=='-'+old_particle):
-                part1=' -'+new_particle
-                part2= line[10:]
-                newlhe.write(part1+part2)
-                no_change=False
             elif(pdgid==old_particle):
-                part1='  '+new_particle
+                part1=new_particle
                 part2=line[10:]
                 newlhe.write(part1+part2)
                 no_change=False
