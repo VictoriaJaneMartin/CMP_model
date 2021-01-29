@@ -103,7 +103,7 @@ for line in oldlhe:
         pdgid=columns[0]
         no_change=True
         for old_particle, new_particle in zip(lhacodes,MC_codes):
-            elif(pdgid==old_particle):
+            if(pdgid==old_particle):
                 part1=new_particle
                 part2=line[10:]
                 newlhe.write(part1+part2)
