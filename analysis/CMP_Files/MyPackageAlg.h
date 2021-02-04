@@ -50,6 +50,7 @@ private:
   std::vector<float> *pt_Chis = nullptr;
   std::vector<float> *eta_Chis = nullptr;
   std::vector<float> *phi_Chis = nullptr;
+  std::vector<int> *status_Chis = nullptr;
   std::vector<float> *pt_S = nullptr;
   std::vector<float> *eta_S = nullptr;
   std::vector<float> *phi_S = nullptr;

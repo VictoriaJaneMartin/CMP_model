@@ -27,6 +27,7 @@ StatusCode AnalysisAlg::initialize()
   pt_Chis = new std::vector<float>();
   eta_Chis = new std::vector<float>();
   phi_Chis = new std::vector<float>();
+  status_Chis = new std::vector<int>();
 
   pt_S = new std::vector<float>();
   eta_S = new std::vector<float>();
@@ -52,6 +53,7 @@ StatusCode AnalysisAlg::initialize()
   ttree->Branch("pt_Chis", &pt_Chis);
   ttree->Branch("eta_Chis", &eta_Chis);
   ttree->Branch("phi_Chis", &phi_Chis);
+  ttree->Branch("status_Chis", &status_Chis);
 
   ttree->Branch("pt_S", &pt_S);
   ttree->Branch("eta_S", &eta_S);
@@ -85,6 +87,8 @@ StatusCode AnalysisAlg::finalize()
   delete pt_Chis;
   delete eta_Chis;
   delete phi_Chis;
+  delete status_Chis;
+
   delete pt_S;
   delete eta_S;
   delete phi_S;
@@ -114,6 +118,7 @@ StatusCode AnalysisAlg::execute()
   pt_Chis->clear();
   eta_Chis->clear();
   phi_Chis->clear();
+  status_Chis->clear();
 
   pt_S->clear();
   eta_S->clear();
@@ -152,7 +157,8 @@ StatusCode AnalysisAlg::execute()
   {
     if (1000024 == abs(p->pdgId()))
     {
-      if (p->status() == 1)
+      status_Chis->push_back(p->status());
+      if (p->status() == 22)
       {
         pt_Chis->push_back(p->pt());
         eta_Chis->push_back(p->eta());
