@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export maxEvents=100
+export maxEvents=1000
 export skipEvents=0
 export conditionsTag="default:OFLCOND-MC16-SDR-14"
 export DBRelease="all:current"
