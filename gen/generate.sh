@@ -11,14 +11,7 @@ outputEVNTFile=EVNT.pool.root
 
 workingDir=`pwd`
 baseDir=Base
-dirName=$1
-
-while [ -z $dirName ]
-do
-	echo "Which directory should the process be run in? (Type 'here' for default in current dir)"
-	ls
-	read dirName
-done
+dirName="here"
 
 if [ $dirName = "here" ]
 then
