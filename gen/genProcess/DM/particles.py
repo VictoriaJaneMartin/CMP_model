@@ -465,7 +465,7 @@ G__plus__ = Particle(pdg_code = 251,
 
 G__minus__ = G__plus__.anti()
 
-phi__plus__ = Particle(pdg_code = 5000001,
+phi__plus__ = Particle(pdg_code = 200005,
                        name = '~Phi+',
                        antiname = '~Phi-',
                        spin = 1,
