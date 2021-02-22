@@ -356,7 +356,7 @@ WT = Parameter(name = 'WT',
 WChi = Parameter(name = 'WChi',
                  nature = 'external',
                  type = 'real',
-                 value = 0.2E-15,
+                 value = 0.2E-8,
                  texname = '\\text{WChi}',
                  lhablock = 'DECAY',
                  lhacode = [ 200001 ])
