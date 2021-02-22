@@ -327,7 +327,7 @@ Mphi = Parameter(name = 'Mphi',
                  value = 65.0,
                  texname = '\\text{Mphi}',
                  lhablock = 'MASS',
-                 lhacode = [ 200005 ])
+                 lhacode = [ 5000001 ])
 
 WZ = Parameter(name = 'WZ',
                nature = 'external',
@@ -407,7 +407,7 @@ Wphi = Parameter(name = 'Wphi',
                  value = 1.0,
                  texname = '\\text{Wphi}',
                  lhablock = 'DECAY',
-                 lhacode = [ 200005 ])
+                 lhacode = [ 5000001 ])
 
 aEW = Parameter(name = 'aEW',
                 nature = 'internal',
