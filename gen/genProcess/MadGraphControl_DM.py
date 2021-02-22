@@ -119,7 +119,7 @@ zip1 = subprocess.Popen(['gzip',process_dir+'/Events/'+runName+'/unweighted_even
 zip1.wait()
 
 shutil.move(process_dir+'/Events/'+runName+'/unweighted_events2.lhe.gz',process_dir+'/Events/'+runName+'/unweighted_events.lhe.gz')
-#os.remove(process_dir+'/Events/'+runName+'/unweighted_events.lhe')
+os.remove(process_dir+'/Events/'+runName+'/unweighted_events.lhe')
 
 arrange_output(run_name=runName,proc_dir=process_dir,outputDS=runName+'._00001.events.tar.gz')
 
