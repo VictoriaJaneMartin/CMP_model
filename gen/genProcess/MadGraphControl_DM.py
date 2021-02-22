@@ -23,7 +23,7 @@ else:
     raise RuntimeError("runNumber %i not recognised in these jobOptions."%runArgs.runNumber)
 
 ######
-mgproc="generate p p > ~chi+ ~chi-, (~chi+ > ~Phi+ ~Psi), (~chi- > ~Phi- ~Psi~)"
+mgproc="generate p p > ~chi+ ~chi-, (~chi+ > ~Phi ~Psi), (~chi- > ~Phi- ~Psi~) , (~Phi+ > e+ NN1) , (~Phi- > e- NN1~)"
 name='DM'
 process="pp>DM"
 
@@ -86,8 +86,8 @@ newlhe = open(process_dir+'/Events/'+runName+'/unweighted_events2.lhe','w')
 
 
 init = True
-lhacodes = ['200001','200005','200000','200002','200003','200004',       '-200001','-200005','-200000','-200002','-200003','-200004']
-MC_codes = ['  1000011','  1000024','  1000022','  1000012','  1000014',' 1000016',  ' -1000011',' -1000024','  1000022',' -1000012',' -1000014',' -1000016']
+lhacodes = ['200001','5000001','200000','200002','200003','200004',       '-200001','-5000001','-200000','-200002','-200003','-200004']
+MC_codes = ['  1000011',' 1000024','  1000022','  1000012','  1000014',' 1000016',  ' -1000011','-1000024','  1000022',' -1000012',' -1000014',' -1000016']
 
 for line in oldlhe:
     if init==True:
