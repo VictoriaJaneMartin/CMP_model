@@ -77,10 +77,7 @@ Decay_NN3 = Decay(name = 'Decay_NN3',
 
 Decay_phi__plus__ = Decay(name = 'Decay_phi__plus__',
                           particle = P.phi__plus__,
-                          partial_widths = {(P.P__tilde__Chi__plus__,P.P__tilde__Psi__tilde__):'((-2*MChi**2*yl1**2 + 2*Mphi**2*yl1**2 - 4*MChi*MPsi*yl1**2 - 2*MPsi**2*yl1**2)*cmath.sqrt(MChi**4 - 2*MChi**2*Mphi**2 + Mphi**4 - 2*MChi**2*MPsi**2 - 2*Mphi**2*MPsi**2 + MPsi**4))/(16.*cmath.pi*abs(Mphi)**3)',
-                                            (P.NN1,P.e__plus__):'((-(Me**2*y2e**2) - MNN1**2*y2e**2 + Mphi**2*y2e**2)*cmath.sqrt(Me**4 - 2*Me**2*MNN1**2 + MNN1**4 - 2*Me**2*Mphi**2 - 2*MNN1**2*Mphi**2 + Mphi**4))/(16.*cmath.pi*abs(Mphi)**3)',
-                                            (P.NN2,P.mu__plus__):'((-(MMU**2*y2m**2) - MNN2**2*y2m**2 + Mphi**2*y2m**2)*cmath.sqrt(MMU**4 - 2*MMU**2*MNN2**2 + MNN2**4 - 2*MMU**2*Mphi**2 - 2*MNN2**2*Mphi**2 + Mphi**4))/(16.*cmath.pi*abs(Mphi)**3)',
-                                            (P.NN3,P.ta__plus__):'((-(MNN3**2*y2t**2) + Mphi**2*y2t**2 - MTA**2*y2t**2)*cmath.sqrt(MNN3**4 - 2*MNN3**2*Mphi**2 + Mphi**4 - 2*MNN3**2*MTA**2 - 2*Mphi**2*MTA**2 + MTA**4))/(16.*cmath.pi*abs(Mphi)**3)'})
+                          partial_widths = {(P.P__tilde__Chi__plus__,P.P__tilde__Psi__tilde__):'((-2*MChi**2*yl1**2 + 2*Mphi**2*yl1**2 - 4*MChi*MPsi*yl1**2 - 2*MPsi**2*yl1**2)*cmath.sqrt(MChi**4 - 2*MChi**2*Mphi**2 + Mphi**4 - 2*MChi**2*MPsi**2 - 2*Mphi**2*MPsi**2 + MPsi**4))/(16.*cmath.pi*abs(Mphi)**3)'})
 
 Decay_P__tilde__Psi = Decay(name = 'Decay_P__tilde__Psi',
                             particle = P.P__tilde__Psi,
