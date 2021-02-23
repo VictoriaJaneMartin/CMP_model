@@ -9,7 +9,7 @@ define vl~ = ve~ vm~ vt~
 import model ./DM
 define nn = nn1 nn2 nn3
 define nn~ nn1~ nn2~ nn3~
-generate p p > ~chi+ ~chi-, (~chi+ > ~Phi+ ~Psi), (~chi- > ~Phi- ~Psi~)
+generate p p > ~chi+ ~chi-, (~chi+ > ~phi+ ~psi), (~chi- > ~phi- ~psi~)
 output -f
 
 
