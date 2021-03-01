@@ -300,7 +300,7 @@ MNN1 = Parameter(name = 'MNN1',
 MNN2 = Parameter(name = 'MNN2',
                  nature = 'external',
                  type = 'real',
-                 value = 500,
+                 value = 100,
                  texname = '\\text{MNN2}',
                  lhablock = 'MASS',
                  lhacode = [ 200003 ])
