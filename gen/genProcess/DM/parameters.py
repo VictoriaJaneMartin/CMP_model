@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 2.3.32
-# Mathematica version: 11.3.0 for Linux x86 (64-bit) (March 7, 2018)
-# Date: Mon 25 Feb 2019 18:51:59
+# Mathematica version: 12.0.0 for Linux x86 (64-bit) (April 7, 2019)
+# Date: Fri 26 Feb 2021 22:12:07
 
 
 
@@ -124,7 +124,7 @@ ymtau = Parameter(name = 'ymtau',
 yl1 = Parameter(name = 'yl1',
                 nature = 'external',
                 type = 'real',
-                value = 1e-7,
+                value = 1.,
                 texname = 'y_1',
                 lhablock = 'FRBlock',
                 lhacode = [ 1 ])
@@ -132,7 +132,7 @@ yl1 = Parameter(name = 'yl1',
 y2e = Parameter(name = 'y2e',
                 nature = 'external',
                 type = 'real',
-                value = 1e-9,
+                value = 1.,
                 texname = 'y_{2 e}',
                 lhablock = 'FRBlock',
                 lhacode = [ 2 ])
@@ -140,7 +140,7 @@ y2e = Parameter(name = 'y2e',
 y2m = Parameter(name = 'y2m',
                 nature = 'external',
                 type = 'real',
-                value = 1e-9,
+                value = 1.,
                 texname = 'y_{2 m}',
                 lhablock = 'FRBlock',
                 lhacode = [ 3 ])
@@ -148,7 +148,7 @@ y2m = Parameter(name = 'y2m',
 y2t = Parameter(name = 'y2t',
                 nature = 'external',
                 type = 'real',
-                value = 1e-9,
+                value = 1.,
                 texname = 'y_{2 t}',
                 lhablock = 'FRBlock',
                 lhacode = [ 4 ])
@@ -276,15 +276,15 @@ MB = Parameter(name = 'MB',
 MChi = Parameter(name = 'MChi',
                  nature = 'external',
                  type = 'real',
-                 value = 200.0,
+                 value = 700,
                  texname = '\\text{MChi}',
                  lhablock = 'MASS',
-                 lhacode = [ 200001 ])
+                 lhacode = [ 1000024 ])
 
 MPsi = Parameter(name = 'MPsi',
                  nature = 'external',
                  type = 'real',
-                 value = 65.0,
+                 value = 500,
                  texname = '\\text{MPsi}',
                  lhablock = 'MASS',
                  lhacode = [ 200000 ])
@@ -292,7 +292,7 @@ MPsi = Parameter(name = 'MPsi',
 MNN1 = Parameter(name = 'MNN1',
                  nature = 'external',
                  type = 'real',
-                 value = 30,
+                 value = 500,
                  texname = '\\text{MNN1}',
                  lhablock = 'MASS',
                  lhacode = [ 200002 ])
@@ -300,7 +300,7 @@ MNN1 = Parameter(name = 'MNN1',
 MNN2 = Parameter(name = 'MNN2',
                  nature = 'external',
                  type = 'real',
-                 value = 30,
+                 value = 500,
                  texname = '\\text{MNN2}',
                  lhablock = 'MASS',
                  lhacode = [ 200003 ])
@@ -308,7 +308,7 @@ MNN2 = Parameter(name = 'MNN2',
 MNN3 = Parameter(name = 'MNN3',
                  nature = 'external',
                  type = 'real',
-                 value = 30,
+                 value = 500,
                  texname = '\\text{MNN3}',
                  lhablock = 'MASS',
                  lhacode = [ 200004 ])
@@ -321,13 +321,13 @@ MH = Parameter(name = 'MH',
                lhablock = 'MASS',
                lhacode = [ 25 ])
 
-Mphi = Parameter(name = 'Mphi',
-                 nature = 'external',
-                 type = 'real',
-                 value = 65.0,
-                 texname = '\\text{Mphi}',
-                 lhablock = 'MASS',
-                 lhacode = [ 5000001 ])
+Mphi1 = Parameter(name = 'Mphi1',
+                  nature = 'external',
+                  type = 'real',
+                  value = 250,
+                  texname = '\\text{Mphi1}',
+                  lhablock = 'MASS',
+                  lhacode = [ 1000011 ])
 
 WZ = Parameter(name = 'WZ',
                nature = 'external',
@@ -356,15 +356,15 @@ WT = Parameter(name = 'WT',
 WChi = Parameter(name = 'WChi',
                  nature = 'external',
                  type = 'real',
-                 value = 0.2E-8,
+                 value = 1,
                  texname = '\\text{WChi}',
                  lhablock = 'DECAY',
-                 lhacode = [ 200001 ])
+                 lhacode = [ 1000024 ])
 
 WPsi = Parameter(name = 'WPsi',
                  nature = 'external',
                  type = 'real',
-                 value = 1.0,
+                 value = 1,
                  texname = '\\text{WPsi}',
                  lhablock = 'DECAY',
                  lhacode = [ 200000 ])
@@ -401,13 +401,13 @@ WH = Parameter(name = 'WH',
                lhablock = 'DECAY',
                lhacode = [ 25 ])
 
-Wphi = Parameter(name = 'Wphi',
-                 nature = 'external',
-                 type = 'real',
-                 value = 1.0,
-                 texname = '\\text{Wphi}',
-                 lhablock = 'DECAY',
-                 lhacode = [ 5000001 ])
+Wphi1 = Parameter(name = 'Wphi1',
+                  nature = 'external',
+                  type = 'real',
+                  value = 20.85,
+                  texname = '\\text{Wphi1}',
+                  lhablock = 'DECAY',
+                  lhacode = [ 1000011 ])
 
 aEW = Parameter(name = 'aEW',
                 nature = 'internal',
@@ -525,8 +525,8 @@ vev = Parameter(name = 'vev',
 
 muS = Parameter(name = 'muS',
                 nature = 'internal',
-                type = 'real',
-                value = 'cmath.sqrt(Mphi**2 - (lam1*vev**2)/2.)',
+                type = 'complex',
+                value = 'cmath.sqrt(MS**2 - (lam1*vev**2)/2.)',
                 texname = '\\text{muS}')
 
 lam = Parameter(name = 'lam',
@@ -595,218 +595,219 @@ muH = Parameter(name = 'muH',
                 value = 'cmath.sqrt(lam*vev**2)',
                 texname = '\\mu')
 
-I1b11 = Parameter(name = 'I1b11',
+I1a11 = Parameter(name = 'I1a11',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ydo*complexconjugate(CKM1x1)',
-                  texname = '\\text{I1b11}')
+                  texname = '\\text{I1a11}')
 
-I1b12 = Parameter(name = 'I1b12',
+I1a12 = Parameter(name = 'I1a12',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ydo*complexconjugate(CKM2x1)',
-                  texname = '\\text{I1b12}')
+                  texname = '\\text{I1a12}')
 
-I1b13 = Parameter(name = 'I1b13',
+I1a13 = Parameter(name = 'I1a13',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ydo*complexconjugate(CKM3x1)',
-                  texname = '\\text{I1b13}')
+                  texname = '\\text{I1a13}')
 
-I1b21 = Parameter(name = 'I1b21',
+I1a21 = Parameter(name = 'I1a21',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ys*complexconjugate(CKM1x2)',
-                  texname = '\\text{I1b21}')
+                  texname = '\\text{I1a21}')
 
-I1b22 = Parameter(name = 'I1b22',
+I1a22 = Parameter(name = 'I1a22',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ys*complexconjugate(CKM2x2)',
-                  texname = '\\text{I1b22}')
+                  texname = '\\text{I1a22}')
 
-I1b23 = Parameter(name = 'I1b23',
+I1a23 = Parameter(name = 'I1a23',
                   nature = 'internal',
                   type = 'complex',
                   value = 'ys*complexconjugate(CKM3x2)',
-                  texname = '\\text{I1b23}')
+                  texname = '\\text{I1a23}')
 
-I1b31 = Parameter(name = 'I1b31',
+I1a31 = Parameter(name = 'I1a31',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yb*complexconjugate(CKM1x3)',
-                  texname = '\\text{I1b31}')
+                  texname = '\\text{I1a31}')
 
-I1b32 = Parameter(name = 'I1b32',
+I1a32 = Parameter(name = 'I1a32',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yb*complexconjugate(CKM2x3)',
-                  texname = '\\text{I1b32}')
+                  texname = '\\text{I1a32}')
 
-I1b33 = Parameter(name = 'I1b33',
+I1a33 = Parameter(name = 'I1a33',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yb*complexconjugate(CKM3x3)',
-                  texname = '\\text{I1b33}')
+                  texname = '\\text{I1a33}')
 
-I2b11 = Parameter(name = 'I2b11',
+I2a11 = Parameter(name = 'I2a11',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yup*complexconjugate(CKM1x1)',
-                  texname = '\\text{I2b11}')
+                  texname = '\\text{I2a11}')
 
-I2b12 = Parameter(name = 'I2b12',
+I2a12 = Parameter(name = 'I2a12',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yc*complexconjugate(CKM2x1)',
-                  texname = '\\text{I2b12}')
+                  texname = '\\text{I2a12}')
 
-I2b13 = Parameter(name = 'I2b13',
+I2a13 = Parameter(name = 'I2a13',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yt*complexconjugate(CKM3x1)',
-                  texname = '\\text{I2b13}')
+                  texname = '\\text{I2a13}')
 
-I2b21 = Parameter(name = 'I2b21',
+I2a21 = Parameter(name = 'I2a21',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yup*complexconjugate(CKM1x2)',
-                  texname = '\\text{I2b21}')
+                  texname = '\\text{I2a21}')
 
-I2b22 = Parameter(name = 'I2b22',
+I2a22 = Parameter(name = 'I2a22',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yc*complexconjugate(CKM2x2)',
-                  texname = '\\text{I2b22}')
+                  texname = '\\text{I2a22}')
 
-I2b23 = Parameter(name = 'I2b23',
+I2a23 = Parameter(name = 'I2a23',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yt*complexconjugate(CKM3x2)',
-                  texname = '\\text{I2b23}')
+                  texname = '\\text{I2a23}')
 
-I2b31 = Parameter(name = 'I2b31',
+I2a31 = Parameter(name = 'I2a31',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yup*complexconjugate(CKM1x3)',
-                  texname = '\\text{I2b31}')
+                  texname = '\\text{I2a31}')
 
-I2b32 = Parameter(name = 'I2b32',
+I2a32 = Parameter(name = 'I2a32',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yc*complexconjugate(CKM2x3)',
-                  texname = '\\text{I2b32}')
+                  texname = '\\text{I2a32}')
 
-I2b33 = Parameter(name = 'I2b33',
+I2a33 = Parameter(name = 'I2a33',
                   nature = 'internal',
                   type = 'complex',
                   value = 'yt*complexconjugate(CKM3x3)',
-                  texname = '\\text{I2b33}')
+                  texname = '\\text{I2a33}')
 
-I3b11 = Parameter(name = 'I3b11',
+I3a11 = Parameter(name = 'I3a11',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM1x1*yup',
-                  texname = '\\text{I3b11}')
+                  texname = '\\text{I3a11}')
 
-I3b12 = Parameter(name = 'I3b12',
+I3a12 = Parameter(name = 'I3a12',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM1x2*yup',
-                  texname = '\\text{I3b12}')
+                  texname = '\\text{I3a12}')
 
-I3b13 = Parameter(name = 'I3b13',
+I3a13 = Parameter(name = 'I3a13',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM1x3*yup',
-                  texname = '\\text{I3b13}')
+                  texname = '\\text{I3a13}')
 
-I3b21 = Parameter(name = 'I3b21',
+I3a21 = Parameter(name = 'I3a21',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM2x1*yc',
-                  texname = '\\text{I3b21}')
+                  texname = '\\text{I3a21}')
 
-I3b22 = Parameter(name = 'I3b22',
+I3a22 = Parameter(name = 'I3a22',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM2x2*yc',
-                  texname = '\\text{I3b22}')
+                  texname = '\\text{I3a22}')
 
-I3b23 = Parameter(name = 'I3b23',
+I3a23 = Parameter(name = 'I3a23',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM2x3*yc',
-                  texname = '\\text{I3b23}')
+                  texname = '\\text{I3a23}')
 
-I3b31 = Parameter(name = 'I3b31',
+I3a31 = Parameter(name = 'I3a31',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM3x1*yt',
-                  texname = '\\text{I3b31}')
+                  texname = '\\text{I3a31}')
 
-I3b32 = Parameter(name = 'I3b32',
+I3a32 = Parameter(name = 'I3a32',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM3x2*yt',
-                  texname = '\\text{I3b32}')
+                  texname = '\\text{I3a32}')
 
-I3b33 = Parameter(name = 'I3b33',
+I3a33 = Parameter(name = 'I3a33',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM3x3*yt',
-                  texname = '\\text{I3b33}')
+                  texname = '\\text{I3a33}')
 
-I4b11 = Parameter(name = 'I4b11',
+I4a11 = Parameter(name = 'I4a11',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM1x1*ydo',
-                  texname = '\\text{I4b11}')
+                  texname = '\\text{I4a11}')
 
-I4b12 = Parameter(name = 'I4b12',
+I4a12 = Parameter(name = 'I4a12',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM1x2*ys',
-                  texname = '\\text{I4b12}')
+                  texname = '\\text{I4a12}')
 
-I4b13 = Parameter(name = 'I4b13',
+I4a13 = Parameter(name = 'I4a13',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM1x3*yb',
-                  texname = '\\text{I4b13}')
+                  texname = '\\text{I4a13}')
 
-I4b21 = Parameter(name = 'I4b21',
+I4a21 = Parameter(name = 'I4a21',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM2x1*ydo',
-                  texname = '\\text{I4b21}')
+                  texname = '\\text{I4a21}')
 
-I4b22 = Parameter(name = 'I4b22',
+I4a22 = Parameter(name = 'I4a22',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM2x2*ys',
-                  texname = '\\text{I4b22}')
+                  texname = '\\text{I4a22}')
 
-I4b23 = Parameter(name = 'I4b23',
+I4a23 = Parameter(name = 'I4a23',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM2x3*yb',
-                  texname = '\\text{I4b23}')
+                  texname = '\\text{I4a23}')
 
-I4b31 = Parameter(name = 'I4b31',
+I4a31 = Parameter(name = 'I4a31',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM3x1*ydo',
-                  texname = '\\text{I4b31}')
+                  texname = '\\text{I4a31}')
 
-I4b32 = Parameter(name = 'I4b32',
+I4a32 = Parameter(name = 'I4a32',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM3x2*ys',
-                  texname = '\\text{I4b32}')
+                  texname = '\\text{I4a32}')
 
-I4b33 = Parameter(name = 'I4b33',
+I4a33 = Parameter(name = 'I4a33',
                   nature = 'internal',
                   type = 'complex',
                   value = 'CKM3x3*yb',
-                  texname = '\\text{I4b33}')
+                  texname = '\\text{I4a33}')
+

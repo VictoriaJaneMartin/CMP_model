@@ -1,6 +1,6 @@
 # This file was automatically created by FeynRules 2.3.32
-# Mathematica version: 11.3.0 for Linux x86 (64-bit) (March 7, 2018)
-# Date: Mon 25 Feb 2019 18:51:59
+# Mathematica version: 12.0.0 for Linux x86 (64-bit) (April 7, 2019)
+# Date: Fri 26 Feb 2021 22:12:07
 
 
 from __future__ import division
@@ -339,7 +339,7 @@ b = Particle(pdg_code = 5,
 
 b__tilde__ = b.anti()
 
-P__tilde__Chi__plus__ = Particle(pdg_code = 200001,
+P__tilde__Chi__plus__ = Particle(pdg_code = 1000024,
                                  name = '~Chi+',
                                  antiname = '~Chi-',
                                  spin = 2,
@@ -465,19 +465,19 @@ G__plus__ = Particle(pdg_code = 251,
 
 G__minus__ = G__plus__.anti()
 
-phi__plus__ = Particle(pdg_code = 5000001,
-                       name = '~Phi+',
-                       antiname = '~Phi-',
-                       spin = 1,
-                       color = 1,
-                       mass = Param.Mphi,
-                       width = Param.Wphi,
-                       texname = '~Phi+',
-                       antitexname = '~Phi-',
-                       charge = 1,
-                       GhostNumber = 0,
-                       LeptonNumber = 0,
-                       Y = 1)
+phi1__plus__ = Particle(pdg_code = 1000011,
+                        name = 'phi1+',
+                        antiname = 'phi1-',
+                        spin = 1,
+                        color = 1,
+                        mass = Param.Mphi1,
+                        width = Param.Wphi1,
+                        texname = 'phi1+',
+                        antitexname = 'phi1-',
+                        charge = 1,
+                        GhostNumber = 0,
+                        LeptonNumber = 0,
+                        Y = 0)
 
-phi__minus__ = phi__plus__.anti()
+phi1__minus__ = phi1__plus__.anti()
 
