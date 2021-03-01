@@ -23,7 +23,7 @@ else:
     raise RuntimeError("runNumber %i not recognised in these jobOptions."%runArgs.runNumber)
 
 ######
-mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi+ ~Psi), (~chi- > phi- ~Psi~)"
+mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi), (~chi- > phi1- ~Psi~)"
 name='DM'
 process="pp>DM"
 
@@ -87,7 +87,7 @@ newlhe = open(process_dir+'/Events/'+runName+'/unweighted_events2.lhe','w')
 
 init = True
 lhacodes = ['200001','5000001','200000','200002','200003','200004',       '-200001','-5000001','-200000','-200002','-200003','-200004']
-MC_codes = ['  1000024','  1000037','  1000022','  1000012','  1000014',' 1000016',  ' -1000024',' -1000037','  1000022',' -1000012',' -1000014',' -1000016']
+MC_codes = ['  1000024','  1000037','  1000022','  1000012','  1000014',' 1000016',  ' -1000024',' -1000037',' -1000022',' -1000012',' -1000014',' -1000016']
 
 for line in oldlhe:
     if init==True:
@@ -147,8 +147,8 @@ bonus_file.write('-200001 ~Chi- 200.0 (GeV/c) fermion ~Chi- 0\n')
 bonus_file.write('5000001 phi+ 65.0 (GeV/c) scalar phi+ 0\n')
 bonus_file.write('-5000001 phi- 65.0 (GeV/c) scalar phi- 0\n')
 
-bonus_file.write('200000 ~Psi+ 65.0 (GeV/c) fermion ~Psi+ 0\n')
-bonus_file.write('-200000 ~Psi- 65.0 (GeV/c) fermion ~Psi- 0\n')
+bonus_file.write('200000 ~Psi~ 65.0 (GeV/c) fermion ~Psi 0\n')
+bonus_file.write('-200000 ~Psi 65.0 (GeV/c) fermion ~Psi~ 0\n')
 
 
 
