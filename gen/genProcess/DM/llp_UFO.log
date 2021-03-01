@@ -1,0 +1,111 @@
+# This file was automatically created by FeynRules 2.3.32
+# Mathematica version: 12.0.0 for Linux x86 (64-bit) (April 7, 2019)
+# Date: Fri 26 Feb 2021 22:11:41
+
+
+# 
+# This is the logfile for the model Freezein+long-lived
+
+# Authors: S. Chakraborti
+# Model version: 1.0
+# Checking the Quantum numbers
+   * Electric charge defined.
+# Checking the Lagrangians
+   * All Lagrangians are ok.
+#
+# Particle definitions
+#
+
+   * No particles removed. All particles correspond to GenInt setup.
+
+# Automatically assigned PDG numbers
+   * Assigned PDG number 9000001 to particle ghA
+   * Assigned PDG number 9000002 to particle ghZ
+   * Assigned PDG number 9000003 to particle ghWp
+   * Assigned PDG number 9000004 to particle ghWm
+
+
+# Compulsory PDG codes:
+   * Class SM leptons complete.
+   * Class SM neutrinos complete.
+   * Class SM quarks complete.
+   * Class SM gauge bosons complete.
+#
+# Parameter definitions
+#
+
+   * Parameter muS is complex, but declared as real. Changing type to complex.
+
+
+# Vertices
+   * Calling FeynmanRules for 1 Lagrangians.
+   * Number of classes vertices: 126
+   * Number of flavored vertices: 196
+   * Saved vertices in InterfaceRun[ 1 ].
+   * Checked QNumber conservation.
+      - Quantum number GhostNumber conserved in all vertices.
+      - Quantum number LeptonNumber NOT conserved in the following vertices
+          {phi1bar, ebar, NN1}
+          {phi1bar, mubar, NN2}
+          {phi1bar, tabar, NN3}
+          {GP, NN1bar, e}
+          {G0, NN1bar, ve}
+          {H, NN1bar, ve}
+          {GP, NN2bar, mu}
+          {G0, NN2bar, vm}
+          {H, NN2bar, vm}
+          {GP, NN3bar, ta}
+          {G0, NN3bar, vt}
+          {H, NN3bar, vt}
+          {phi1, NN1bar, e}
+          {phi1, NN2bar, mu}
+          {phi1, NN3bar, ta}
+          {GPbar, ebar, NN1}
+          {G0, vebar, NN1}
+          {H, vebar, NN1}
+          {GPbar, mubar, NN2}
+          {G0, vmbar, NN2}
+          {H, vmbar, NN2}
+          {GPbar, tabar, NN3}
+          {G0, vtbar, NN3}
+          {H, vtbar, NN3}
+      - Quantum number Q conserved in all vertices.
+      - Quantum number Y conserved in all vertices.
+   * particles.py written.
+   * parameters.py written.
+#
+# Vertex definitions
+#
+
+   * 196 vertices written.
+   * vertices.py written.
+#
+# Lorentz structure definitions
+#
+
+   * 19 lorentz structures written.
+   * lorentz.py written.
+#
+# Coupling definitions
+#
+
+   * 165 couplings written.
+   * couplings.py written.
+#
+# Coupling order definitions
+#
+
+   * 0 couplings orders written.
+   * coupling_orders.py written.
+#
+# Decay definitions
+#
+
+   * 18 decays written.
+   * decay.py not written
+#
+# CTCoupling definitions
+#
+
+   * 0 CTcouplings written.
+   * CT_couplings.py written.
