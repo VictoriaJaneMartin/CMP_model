@@ -1,4 +1,4 @@
-# Run arguments file auto-generated on Wed Feb 10 16:17:04 2021 by:
+# Run arguments file auto-generated on Mon Mar  1 17:25:42 2021 by:
 # JobTransform: generate
 # Version: $Id: trfExe.py 814151 2018-05-15 16:57:00Z mavogel $
 # Import runArgs class
@@ -11,7 +11,7 @@ runArgs.generatorJobNumber = 0
 runArgs.printEvts = 5
 runArgs.runNumber = 999999
 runArgs.skipEvents = 0
-runArgs.maxEvents = 500
+runArgs.maxEvents = 50
 runArgs.jobConfig = ['MC15.999999.MadGraphPythia8EvtGen_NNPDF23LO_DM.py']
 runArgs.generatorRunMode = 'run'
 runArgs.firstEvent = 1
