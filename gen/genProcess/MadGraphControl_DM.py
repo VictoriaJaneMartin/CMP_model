@@ -147,9 +147,7 @@ bonus_file.write('-200001 ~Chi- 200.0 (GeV/c) fermion ~Chi- 0\n')
 bonus_file.write('5000001 phi1+ 65.0 (GeV/c) scalar phi1+ 0\n')
 bonus_file.write('-5000001 phi1- 65.0 (GeV/c) scalar phi1- 0\n')
 
-bonus_file.write('200000 ~Psi+ 65.0 (GeV/c) fermion ~Psi+ 0\n')
-bonus_file.write('-200000 ~Psi- 65.0 (GeV/c) fermion ~Psi- 0\n')
-
+bonus_file.write('200000 ~Psi~ 65.0 (GeV/c) fermion ~Psi~ 0\n')
 
 bonus_file.close()
 testSeq.TestHepMC.G4ExtraWhiteFile='pdg_extras.dat'
