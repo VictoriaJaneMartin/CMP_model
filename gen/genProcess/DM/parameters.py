@@ -279,7 +279,7 @@ MChi = Parameter(name = 'MChi',
                  value = 700,
                  texname = '\\text{MChi}',
                  lhablock = 'MASS',
-                 lhacode = [ 1000024 ])
+                 lhacode = [ 200001 ])
 
 MPsi = Parameter(name = 'MPsi',
                  nature = 'external',
@@ -327,7 +327,7 @@ Mphi1 = Parameter(name = 'Mphi1',
                   value = 250,
                   texname = '\\text{Mphi1}',
                   lhablock = 'MASS',
-                  lhacode = [ 1000011 ])
+                  lhacode = [ 5000001 ])
 
 WZ = Parameter(name = 'WZ',
                nature = 'external',
@@ -359,7 +359,7 @@ WChi = Parameter(name = 'WChi',
                  value = 1,
                  texname = '\\text{WChi}',
                  lhablock = 'DECAY',
-                 lhacode = [ 1000024 ])
+                 lhacode = [ 200001 ])
 
 WPsi = Parameter(name = 'WPsi',
                  nature = 'external',
@@ -407,7 +407,7 @@ Wphi1 = Parameter(name = 'Wphi1',
                   value = 20.85,
                   texname = '\\text{Wphi1}',
                   lhablock = 'DECAY',
-                  lhacode = [ 1000011 ])
+                  lhacode = [ 5000001 ])
 
 aEW = Parameter(name = 'aEW',
                 nature = 'internal',
