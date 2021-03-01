@@ -23,7 +23,7 @@ else:
     raise RuntimeError("runNumber %i not recognised in these jobOptions."%runArgs.runNumber)
 
 ######
-mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~psi), (~chi- > phi1- ~psi~)"
+mgproc="generate p p > ~Chi+ ~Chi-, (~Chi+ > phi1+ ~Psi), (~Chi- > phi1- ~Psi~)"
 name='DM'
 process="pp>DM"
 
