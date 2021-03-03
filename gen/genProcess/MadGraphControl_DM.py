@@ -141,14 +141,14 @@ include("MC15JobOptions/Pythia8_MadGraph.py")
 
 # Chinew is non-interacting
 bonus_file = open('pdg_extras.dat','w')
-bonus_file.write('200001 ~Chi+ 200.0 (GeV/c) fermion ~Chi+ 0\n')
-bonus_file.write('-200001 ~Chi- 200.0 (GeV/c) fermion ~Chi- 0\n')
+bonus_file.write('200001 ~Chi+ 700.0 (GeV/c) fermion ~Chi+ 0\n')
+bonus_file.write('-200001 ~Chi- 700.0 (GeV/c) fermion ~Chi- 0\n')
 
-bonus_file.write('5000001 phi+ 65.0 (GeV/c) scalar phi+ 0\n')
-bonus_file.write('-5000001 phi- 65.0 (GeV/c) scalar phi- 0\n')
+bonus_file.write('5000001 phi+ 250.0 (GeV/c) scalar phi+ 0\n')
+bonus_file.write('-5000001 phi- 250.0 (GeV/c) scalar phi- 0\n')
 
-bonus_file.write('200000 ~Psi~ 65.0 (GeV/c) fermion ~Psi 0\n')
-bonus_file.write('-200000 ~Psi 65.0 (GeV/c) fermion ~Psi~ 0\n')
+bonus_file.write('200000 ~Psi 500.0 (GeV/c) fermion ~Psi 0\n')
+bonus_file.write('-200000 ~Psi~ 500.0 (GeV/c) fermion ~Psi~ 0\n')
 
 
 
