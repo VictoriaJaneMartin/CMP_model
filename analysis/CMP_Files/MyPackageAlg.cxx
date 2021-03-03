@@ -28,6 +28,8 @@ StatusCode AnalysisAlg::initialize()
   eta_Chis = new std::vector<float>();
   phi_Chis = new std::vector<float>();
   status_Chis = new std::vector<int>();
+  DecVtx_x_Chi = new std::vector<float>();
+  DecVtx_x_Chi = new std::vector<float>();
 
   pt_S = new std::vector<float>();
   eta_S = new std::vector<float>();
@@ -45,6 +47,13 @@ StatusCode AnalysisAlg::initialize()
   phi_electrons = new std::vector<float>();
   mu_Eloss = new std::vector<float>();
 
+  mpx = new std::vector<float>();
+  mpy = new std::vector<float>();
+
+  pt_jet= new std::vector<float>();
+  eta_jet = new std::vector<float>();
+  phi_jet = new std::vector<float>();
+
   CHECK(book(TTree("analysisTree", "analysis ntuple")));
   TTree *ttree = tree("analysisTree");
 
@@ -54,6 +63,8 @@ StatusCode AnalysisAlg::initialize()
   ttree->Branch("eta_Chis", &eta_Chis);
   ttree->Branch("phi_Chis", &phi_Chis);
   ttree->Branch("status_Chis", &status_Chis);
+  ttree->Branch("DecVtx_x_Chi", &DecVtx_x_Chi);
+  ttree->Branch("DecVtx_y_Chi", &DecVtx_y_Chi);
 
   ttree->Branch("pt_S", &pt_S);
   ttree->Branch("eta_S", &eta_S);
@@ -75,6 +86,13 @@ StatusCode AnalysisAlg::initialize()
   ttree->Branch("eta_electrons", &eta_electrons);
   ttree->Branch("phi_electrons", &phi_electrons);
 
+  ttree->Branch("mpx", &mpx);
+  ttree->Branch("mpy", &mpy);
+
+  ttree->Branch("pt_jet", &pt_jet);
+  ttree->Branch("eta_jet", &eta_jet);
+  ttree->Branch("phi_jet", &phi_jet);
+
   return StatusCode::SUCCESS;
 }
 
@@ -88,6 +106,8 @@ StatusCode AnalysisAlg::finalize()
   delete eta_Chis;
   delete phi_Chis;
   delete status_Chis;
+  delete DecVtx_x_Chi;
+  delete DecVtx_y_Chi;
 
   delete pt_S;
   delete eta_S;
@@ -106,7 +126,12 @@ StatusCode AnalysisAlg::finalize()
   delete eta_electrons;
   delete phi_electrons;
   delete mu_Eloss;
+  delete mpx;
+  delete mpy;
 
+  delete pt_jet;
+  delete eta_jet;
+  delete phi_jet;
   return StatusCode::SUCCESS;
 }
 
@@ -119,6 +144,8 @@ StatusCode AnalysisAlg::execute()
   eta_Chis->clear();
   phi_Chis->clear();
   status_Chis->clear();
+  DecVtx_x_Chi->clear();
+  DecVtx_y_Chi->clear();
 
   pt_S->clear();
   eta_S->clear();
@@ -140,6 +167,14 @@ StatusCode AnalysisAlg::execute()
   pt_electrons->clear();
   eta_electrons->clear();
   phi_electrons->clear();
+
+  mpx->clear();
+  mpy->clear();
+
+  pt_jet->clear();
+  eta_jet->clear();
+  phi_jet->clear();
+
   chis.clear();
   Scalar.clear();
   Psi.clear();
@@ -164,6 +199,10 @@ StatusCode AnalysisAlg::execute()
         eta_Chis->push_back(p->eta());
         phi_Chis->push_back(p->phi());
         chis.push_back(p->p4());
+      if (p->hasDecayVtx() ==1){
+        DecVtx_x_Chi->push_back(p->decayVtx()->x());
+        DecVtx_y_Chi->push_back(p->decayVtx()->y());
+      }
       }
 
     }
@@ -274,6 +313,24 @@ StatusCode AnalysisAlg::execute()
     }
 
     m_matchedElectrons->push_back(matchedElectron);
+  }
+
+  const xAOD::MissingETContainer *partsET = nullptr;
+  CHECK(evtStore()->retrieve(partsET, "MET_Core_AntiKt4EMPFlow"));
+
+  for (auto p : *partsET)
+  {
+    mpx->push_back(p->mpx());
+    mpy->push_back(p->mpy());
+  }
+  const xAOD::JetContainer *partsJet = nullptr;
+  CHECK(evtStore()->retrieve(partsJet, "AntiKt4EMPFlowJets"));
+
+  for (auto p : *partsJet)
+  {
+    pt_jet->push_back(p->pt());
+    eta_jet->push_back(p->eta());
+    phi_jet->push_back(p->phi());
   }
 
   tree("analysisTree")->Fill();

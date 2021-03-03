@@ -10,9 +10,11 @@
 #include "xAODEventInfo/EventInfo.h"
 #include <xAODTruth/TruthEventContainer.h>
 #include <xAODTruth/TruthParticleContainer.h>
+#include <xAODTruth/TruthVertex.h>
 #include <xAODMuon/MuonContainer.h>
 #include <xAODEgamma/ElectronContainer.h>
-// #include <xAODJet/JetContainer.h>
+#include <xAODMissingET/MissingETContainer.h>
+#include <xAODJet/JetContainer.h>
 // #include <xAODTracking/TrackParticleContainer.h>
 // #include <xAODMissingET/MissingETContainer.h>
 // #include <xAODCaloEvent/CaloClusterContainer.h>
@@ -51,6 +53,9 @@ private:
   std::vector<float> *eta_Chis = nullptr;
   std::vector<float> *phi_Chis = nullptr;
   std::vector<int> *status_Chis = nullptr;
+  std::vector<float> *DecVtx_x_Chi = nullptr;
+  std::vector<float> *DecVtx_y_Chi = nullptr;
+
   std::vector<float> *pt_S = nullptr;
   std::vector<float> *eta_S = nullptr;
   std::vector<float> *phi_S = nullptr;
@@ -68,6 +73,12 @@ private:
   std::vector<float> *phi_electrons = nullptr;
   std::vector<int> *actual_electrons = nullptr;
   std::vector<float> *mu_Eloss = nullptr;
+  std::vector<float> *mpx = nullptr;
+  std::vector<float> *mpy = nullptr;
+
+  std::vector<float> *pt_jet = nullptr;
+  std::vector<float> *eta_jet = nullptr;
+  std::vector<float> *phi_jet = nullptr;
 
 
   std::vector<TLorentzVector> chis;

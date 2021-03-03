@@ -14,16 +14,17 @@ atlas_add_library( AnalysisLib src/*.cxx
                    PUBLIC_HEADERS Analysis
                    INCLUDE_DIRS ${ROOT_INCLUDE_DIRS}
                    LINK_LIBRARIES ${ROOT_LIBRARIES}
-                                    AthAnalysisBaseCompsLib xAODEventInfo 
-				    xAODTruth xAODMuon   
+                                    AthAnalysisBaseCompsLib xAODEventInfo
+				    xAODTruth xAODMuon
                     xAODEgamma
+                    xAODMissingET
 )
 
 # if you add athena components (tools, algorithms) to this package
 # these lines are needed so you can configure them in joboptions
 atlas_add_component( Analysis src/components/*.cxx
                       NOCLIDDB
-                      LINK_LIBRARIES AnalysisLib 
+                      LINK_LIBRARIES AnalysisLib
 )
 
 # if you add an application (exe) to this package
@@ -38,6 +39,3 @@ atlas_install_joboptions( share/*.py )
 atlas_install_data( data/* )
 # You can access your data from code using path resolver, e.g.
 # PathResolverFindCalibFile("Analysis/file.txt")
-
-
-
