@@ -233,7 +233,7 @@ StatusCode AnalysisAlg::execute()
     if (1000024 == abs(p->pdgId()))
     {
       status_Chis->push_back(p->status());
-      if (p->status() == 22)
+      if (p->status() == 1)
       {
         pt_Chis->push_back(p->pt());
         eta_Chis->push_back(p->eta());
