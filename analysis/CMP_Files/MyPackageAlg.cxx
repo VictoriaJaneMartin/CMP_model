@@ -19,11 +19,6 @@ StatusCode AnalysisAlg::initialize()
   //Retrieves of tools you have configured in the joboptions go here
   //
 
-  m_matchedMuons = new std::vector<int>();
-  m_matchedElectrons = new std::vector<int>();
-  actual_muons = new std::vector<int>();
-  actual_electrons = new std::vector<int>();
-
   pt_Chis = new std::vector<float>();
   eta_Chis = new std::vector<float>();
   phi_Chis = new std::vector<float>();
@@ -39,20 +34,32 @@ StatusCode AnalysisAlg::initialize()
   eta_Psi = new std::vector<float>();
   phi_Psi = new std::vector<float>();
 
+  pt_NN1 = new std::vector<float>();
+  eta_NN1 = new std::vector<float>();
+  phi_NN1 = new std::vector<float>();
+
+  pt_NN2 = new std::vector<float>();
+  eta_NN2 = new std::vector<float>();
+  phi_NN2 = new std::vector<float>();
+
+  pt_NN3 = new std::vector<float>();
+  eta_NN3 = new std::vector<float>();
+  phi_NN3 = new std::vector<float>();
+
   pt_muons = new std::vector<float>();
   eta_muons = new std::vector<float>();
   phi_muons = new std::vector<float>();
+
   pt_electrons = new std::vector<float>();
   eta_electrons = new std::vector<float>();
   phi_electrons = new std::vector<float>();
-  mu_Eloss = new std::vector<float>();
-
-  mpx = new std::vector<float>();
-  mpy = new std::vector<float>();
 
   pt_jet= new std::vector<float>();
   eta_jet = new std::vector<float>();
   phi_jet = new std::vector<float>();
+
+  mpx = new std::vector<float>();
+  mpy = new std::vector<float>();
 
   CHECK(book(TTree("analysisTree", "analysis ntuple")));
   TTree *ttree = tree("analysisTree");
@@ -74,24 +81,32 @@ StatusCode AnalysisAlg::initialize()
   ttree->Branch("eta_Psi", &eta_Psi);
   ttree->Branch("phi_Psi", &phi_Psi);
 
-  ttree->Branch("m_matchedMuons", &m_matchedMuons);
-  ttree->Branch("actual_muon", &actual_muons);
+  ttree->Branch("pt_NN1", &pt_NN1);
+  ttree->Branch("eta_NN1", &eta_NN1);
+  ttree->Branch("phi_NN1", &phi_NN1);
+
+  ttree->Branch("pt_NN2", &pt_NN2);
+  ttree->Branch("eta_NN2", &eta_NN2);
+  ttree->Branch("phi_NN2", &phi_NN2);
+
+  ttree->Branch("pt_NN3", &pt_NN3);
+  ttree->Branch("eta_NN3", &eta_NN3);
+  ttree->Branch("phi_NN3", &phi_NN3);
+
   ttree->Branch("pt_muons", &pt_muons);
   ttree->Branch("eta_muons", &eta_muons);
   ttree->Branch("phi_muons", &phi_muons);
-  ttree->Branch("Muons_eLoss", &mu_Eloss);
-  ttree->Branch("m_matchedElectrons", &m_matchedElectrons);
-  ttree->Branch("actual_electron", &actual_electrons);
+
   ttree->Branch("pt_electrons", &pt_electrons);
   ttree->Branch("eta_electrons", &eta_electrons);
   ttree->Branch("phi_electrons", &phi_electrons);
 
-  ttree->Branch("mpx", &mpx);
-  ttree->Branch("mpy", &mpy);
-
   ttree->Branch("pt_jet", &pt_jet);
   ttree->Branch("eta_jet", &eta_jet);
   ttree->Branch("phi_jet", &phi_jet);
+
+  ttree->Branch("mpx", &mpx);
+  ttree->Branch("mpy", &mpy);
 
   return StatusCode::SUCCESS;
 }
@@ -112,26 +127,38 @@ StatusCode AnalysisAlg::finalize()
   delete pt_S;
   delete eta_S;
   delete phi_S;
+
   delete pt_Psi;
   delete eta_Psi;
   delete phi_Psi;
-  delete m_matchedMuons;
+
+  delete pt_NN1;
+  delete eta_NN1;
+  delete phi_NN1;
+
+  delete pt_NN2;
+  delete eta_NN2;
+  delete phi_NN2;
+
+  delete pt_NN3;
+  delete eta_NN3;
+  delete phi_NN3;
+
   delete pt_muons;
   delete eta_muons;
   delete phi_muons;
-  delete actual_muons;
-  delete actual_electrons;
-  delete m_matchedElectrons;
+
   delete pt_electrons;
   delete eta_electrons;
   delete phi_electrons;
-  delete mu_Eloss;
-  delete mpx;
-  delete mpy;
 
   delete pt_jet;
   delete eta_jet;
   delete phi_jet;
+
+  delete mpx;
+  delete mpy;
+
   return StatusCode::SUCCESS;
 }
 
@@ -155,29 +182,42 @@ StatusCode AnalysisAlg::execute()
   eta_Psi->clear();
   phi_Psi->clear();
 
-  m_matchedMuons->clear();
+  pt_NN1->clear();
+  eta_NN1->clear();
+  phi_NN1->clear();
+
+  pt_NN2->clear();
+  eta_NN2->clear();
+  phi_NN2->clear();
+
+  pt_NN1->clear();
+  eta_NN1->clear();
+  phi_NN1->clear();
+
   pt_muons->clear();
   eta_muons->clear();
   phi_muons->clear();
-  actual_muons->clear();
-  mu_Eloss->clear();
 
-  actual_electrons->clear();
-  m_matchedElectrons->clear();
   pt_electrons->clear();
   eta_electrons->clear();
   phi_electrons->clear();
-
-  mpx->clear();
-  mpy->clear();
 
   pt_jet->clear();
   eta_jet->clear();
   phi_jet->clear();
 
+  mpx->clear();
+  mpy->clear();
+
   chis.clear();
   Scalar.clear();
   Psi.clear();
+  NN1.clear();
+  NN2.clear();
+  NN3.clear();
+
+
+
   const xAOD::EventInfo *eventInfo = nullptr;
   CHECK(evtStore()->retrieve(eventInfo, "EventInfo"));
   m_runNumber = eventInfo->runNumber();
@@ -228,6 +268,40 @@ StatusCode AnalysisAlg::execute()
       }
 
     }
+
+    if (1000012 == abs(p->pdgId()))
+    {
+      if (p->status() == 1)
+      {
+        pt_NN1->push_back(p->pt());
+        eta_NN1->push_back(p->eta());
+        phi_NN1->push_back(p->phi());
+        NN1.push_back(p->p4());
+      }
+
+    }
+    if (1000014 == abs(p->pdgId()))
+    {
+      if (p->status() == 1)
+      {
+        pt_NN2->push_back(p->pt());
+        eta_NN2->push_back(p->eta());
+        phi_NN2->push_back(p->phi());
+        NN2.push_back(p->p4());
+      }
+
+    }
+    if (1000016 == abs(p->pdgId()))
+    {
+      if (p->status() == 1)
+      {
+        pt_NN3->push_back(p->pt());
+        eta_NN3->push_back(p->eta());
+        phi_NN3->push_back(p->phi());
+        NN3.push_back(p->p4());
+      }
+
+    }
   }
 
   const xAOD::MuonContainer *muon_parts = nullptr;
@@ -240,41 +314,6 @@ StatusCode AnalysisAlg::execute()
     eta_muons->push_back(p->eta());
     phi_muons->push_back(p->phi());
 
-    matchedMuon = 0;
-    for (auto &i : chis)
-    {
-      Double_t angle = i.DeltaR(p->p4());
-      if (angle <= 0.1)
-      {
-        matchedMuon = 1;
-      }
-    }
-
-    const xAOD::TruthParticle *matched_truth_muon = nullptr;
-    int actual_muon = 0;
-
-    if (p->isAvailable<ElementLink<xAOD::TruthParticleContainer>>("truthParticleLink"))
-    {
-      ElementLink<xAOD::TruthParticleContainer> link = p->auxdata<ElementLink<xAOD::TruthParticleContainer>>("truthParticleLink");
-      if (link.isValid())
-      {
-        matched_truth_muon = *link;
-        if (abs(matched_truth_muon->pdgId()) == 13)
-        {
-          actual_muon = 1;
-        }
-      }
-    }
-
-    float eLoss = 0;
-    if (!p->parameter(eLoss, xAOD::Muon::EnergyLoss)){
-      std::cout << "Muon energy loss not available" << std::endl;
-    }
-
-    mu_Eloss->push_back(eLoss);
-    actual_muons->push_back(actual_muon);
-    m_matchedMuons->push_back(matchedMuon);
-  }
 
   const xAOD::ElectronContainer *electron_parts = nullptr;
   CHECK(evtStore()->retrieve(electron_parts, "Electrons"));
@@ -285,34 +324,15 @@ StatusCode AnalysisAlg::execute()
     eta_electrons->push_back(p->eta());
     phi_electrons->push_back(p->phi());
 
-    const xAOD::TruthParticle *matched_truth_electron = nullptr;
-    int actual_electron = 0;
 
-    if (p->isAvailable<ElementLink<xAOD::TruthParticleContainer>>("truthParticleLink"))
-    {
-      ElementLink<xAOD::TruthParticleContainer> link = p->auxdata<ElementLink<xAOD::TruthParticleContainer>>("truthParticleLink");
-      if (link.isValid())
-      {
-        matched_truth_electron = *link;
-        if (abs(matched_truth_electron->pdgId()) == 11)
-        {
-          actual_electron = 1;
-        }
-      }
-    }
-    actual_electrons->push_back(actual_electron);
+  const xAOD::JetContainer *partsJet = nullptr;
+  CHECK(evtStore()->retrieve(partsJet, "AntiKt4EMPFlowJets"));
 
-    matchedElectron = 0;
-    for (auto &i : chis)
-    {
-      Double_t angle = i.DeltaR(p->p4());
-      if (angle <= 0.1)
-      {
-        matchedElectron = 1;
-      }
-    }
-
-    m_matchedElectrons->push_back(matchedElectron);
+  for (auto p : *partsJet)
+  {
+    pt_jet->push_back(p->pt());
+    eta_jet->push_back(p->eta());
+    phi_jet->push_back(p->phi());
   }
 
   const xAOD::MissingETContainer *partsET = nullptr;
@@ -322,15 +342,6 @@ StatusCode AnalysisAlg::execute()
   {
     mpx->push_back(p->mpx());
     mpy->push_back(p->mpy());
-  }
-  const xAOD::JetContainer *partsJet = nullptr;
-  CHECK(evtStore()->retrieve(partsJet, "AntiKt4EMPFlowJets"));
-
-  for (auto p : *partsJet)
-  {
-    pt_jet->push_back(p->pt());
-    eta_jet->push_back(p->eta());
-    phi_jet->push_back(p->phi());
   }
 
   tree("analysisTree")->Fill();

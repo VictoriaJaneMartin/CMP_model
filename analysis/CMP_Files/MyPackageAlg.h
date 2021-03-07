@@ -47,8 +47,6 @@ public:
 private:
   unsigned int m_runNumber = 0;
   unsigned long long m_eventNumber = 0;
-  int matchedMuon;
-  int matchedElectron;
   std::vector<float> *pt_Chis = nullptr;
   std::vector<float> *eta_Chis = nullptr;
   std::vector<float> *phi_Chis = nullptr;
@@ -59,20 +57,31 @@ private:
   std::vector<float> *pt_S = nullptr;
   std::vector<float> *eta_S = nullptr;
   std::vector<float> *phi_S = nullptr;
+
   std::vector<float> *pt_Psi = nullptr;
   std::vector<float> *eta_Psi = nullptr;
   std::vector<float> *phi_Psi = nullptr;
-  std::vector<int> *m_matchedMuons = nullptr;
+
+  std::vector<float> *pt_NN1 = nullptr;
+  std::vector<float> *eta_NN1 = nullptr;
+  std::vector<float> *phi_NN1 = nullptr;
+
+  std::vector<float> *pt_NN2 = nullptr;
+  std::vector<float> *eta_NN2 = nullptr;
+  std::vector<float> *phi_NN2 = nullptr;
+
+  std::vector<float> *pt_NN3 = nullptr;
+  std::vector<float> *eta_NN3 = nullptr;
+  std::vector<float> *phi_NN3 = nullptr;
+
   std::vector<float> *pt_muons = nullptr;
   std::vector<float> *eta_muons = nullptr;
   std::vector<float> *phi_muons = nullptr;
-  std::vector<int> *actual_muons = nullptr;
-  std::vector<int> *m_matchedElectrons = nullptr;
+
   std::vector<float> *pt_electrons = nullptr;
   std::vector<float> *eta_electrons = nullptr;
   std::vector<float> *phi_electrons = nullptr;
-  std::vector<int> *actual_electrons = nullptr;
-  std::vector<float> *mu_Eloss = nullptr;
+
   std::vector<float> *mpx = nullptr;
   std::vector<float> *mpy = nullptr;
 
@@ -84,6 +93,9 @@ private:
   std::vector<TLorentzVector> chis;
   std::vector<TLorentzVector> Scalar;
   std::vector<TLorentzVector> Psi;
+  std::vector<TLorentzVector> NN1;
+  std::vector<TLorentzVector> NN2;
+  std::vector<TLorentzVector> NN3;
 };
 
 #endif //> !ANALYSIS_ANALYSISALG_H
