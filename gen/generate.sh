@@ -3,7 +3,7 @@
 # Determine run parameters
 jo=MC15.999999.MadGraphPythia8EvtGen_NNPDF23LO_DM.py
 ecmEnergy=13000. 
-maxEvents=50
+maxEvents=10000
 skipEvents=0
 randomSeed=123456 
 outputEVNTFile=EVNT.pool.root
