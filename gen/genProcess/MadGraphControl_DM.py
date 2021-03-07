@@ -23,7 +23,7 @@ else:
     raise RuntimeError("runNumber %i not recognised in these jobOptions."%runArgs.runNumber)
 
 ######
-mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi , phi1+ > mu+ nn2 ), (~chi- > phi1- ~Psi~, phi1- > mu- nn2~) "
+mgproc="generate p p > ~chi+ ~chi-"
 name='DM'
 process="pp>DM"
 
@@ -141,8 +141,8 @@ include("MC15JobOptions/Pythia8_MadGraph.py")
 
 # Chinew is non-interacting
 bonus_file = open('pdg_extras.dat','w')
-bonus_file.write('200001 ~Chi+ 700.0 (GeV/c) fermion ~Chi+ 0\n')
-bonus_file.write('-200001 ~Chi- 700.0 (GeV/c) fermion ~Chi- 0\n')
+bonus_file.write('200001 ~Chi+ 137.0 (GeV/c) fermion ~Chi+ 0\n')
+bonus_file.write('-200001 ~Chi- 137.0 (GeV/c) fermion ~Chi- 0\n')
 
 bonus_file.write('5000001 phi+ 250.0 (GeV/c) scalar phi+ 0\n')
 bonus_file.write('-5000001 phi- 250.0 (GeV/c) scalar phi- 0\n')
