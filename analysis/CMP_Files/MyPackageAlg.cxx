@@ -313,7 +313,7 @@ StatusCode AnalysisAlg::execute()
     pt_muons->push_back(p->pt());
     eta_muons->push_back(p->eta());
     phi_muons->push_back(p->phi());
-
+  }
 
   const xAOD::ElectronContainer *electron_parts = nullptr;
   CHECK(evtStore()->retrieve(electron_parts, "Electrons"));
@@ -323,7 +323,7 @@ StatusCode AnalysisAlg::execute()
     pt_electrons->push_back(p->pt());
     eta_electrons->push_back(p->eta());
     phi_electrons->push_back(p->phi());
-
+  }
 
   const xAOD::JetContainer *partsJet = nullptr;
   CHECK(evtStore()->retrieve(partsJet, "AntiKt4EMPFlowJets"));
