@@ -27,10 +27,10 @@ else:
 #mgproc="generate p p > ~chi+ ~chi-"
 
 # Two Body Decay
-mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi), (~chi- > phi1- ~Psi~) "
+#mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi), (~chi- > phi1- ~Psi~) "#
 
 # Three Body Decay (Muon only)
-#mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi , phi1+ > mu+ nn2 ), (~chi- > phi1- ~Psi~, phi1- > mu- nn2~) "
+mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi , phi1+ > mu+ nn2 , phi1+ > e+ nn1 , phi1+ > tau+ nn3 ), (~chi- > phi1- ~Psi~, phi1- > mu- nn2~ , phi1- > e- nn1~ , phi1- > tau- nn3~ ) "
 
 
 
