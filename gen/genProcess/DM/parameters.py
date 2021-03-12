@@ -276,7 +276,7 @@ MB = Parameter(name = 'MB',
 MChi = Parameter(name = 'MChi',
                  nature = 'external',
                  type = 'real',
-                 value = 700,
+                 value = 137,
                  texname = '\\text{MChi}',
                  lhablock = 'MASS',
                  lhacode = [ 200001 ])
