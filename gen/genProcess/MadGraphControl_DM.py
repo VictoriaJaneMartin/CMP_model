@@ -24,10 +24,10 @@ else:
 
 ######
 #Chi Only Decay
-mgproc="generate p p > ~chi+ ~chi-"
+#mgproc="generate p p > ~chi+ ~chi-"
 
 # Two Body Decay
-#mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi), (~chi- > phi1- ~Psi~) "#
+mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi), (~chi- > phi1- ~Psi~) "#
 
 # Three Body Decay (Muon only)
 #mgproc="generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi , phi1+ > mu+ nn2 , phi1+ > e+ nn1 , phi1+ > ta+ nn3 ), (~chi- > phi1- ~Psi~, phi1- > mu- nn2~ , phi1- > e- nn1~ , phi1- > ta- nn3~ ) "
@@ -151,14 +151,14 @@ include("MC15JobOptions/Pythia8_MadGraph.py")
 
 # Chinew is non-interacting
 bonus_file = open('pdg_extras.dat','w')
-bonus_file.write('200001 ~Chi+ 700.0 (GeV/c) fermion ~Chi+ 0\n')
-bonus_file.write('-200001 ~Chi- 700.0 (GeV/c) fermion ~Chi- 0\n')
+bonus_file.write('200001 ~Chi+ 200.0 (GeV/c) fermion ~Chi+ 0\n')
+bonus_file.write('-200001 ~Chi- 200.0 (GeV/c) fermion ~Chi- 0\n')
 
-bonus_file.write('5000001 phi+ 250.0 (GeV/c) scalar phi+ 0\n')
-bonus_file.write('-5000001 phi- 250.0 (GeV/c) scalar phi- 0\n')
+bonus_file.write('5000001 phi+ 65.0 (GeV/c) scalar phi+ 0\n')
+bonus_file.write('-5000001 phi- 65.0 (GeV/c) scalar phi- 0\n')
 
-bonus_file.write('200000 ~Psi 500.0 (GeV/c) fermion ~Psi 0\n')
-bonus_file.write('-200000 ~Psi~ 500.0 (GeV/c) fermion ~Psi~ 0\n')
+bonus_file.write('200000 ~Psi 130.0 (GeV/c) fermion ~Psi 0\n')
+bonus_file.write('-200000 ~Psi~ 130.0 (GeV/c) fermion ~Psi~ 0\n')
 
 
 
