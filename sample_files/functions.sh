@@ -16,7 +16,3 @@ alias simulate="source $workingDir/simReco/simulate.sh $*"
 
 # for reconstruction
 alias reco="source $workingDir/simReco/reco.sh $*"
-
-# for analysis
-alias analysis="athena Analysis/share/AnalysisAlgJobOptions.py $*"
-alias buildAnalysis="acm compile && analysis $*"
