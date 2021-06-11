@@ -6,7 +6,7 @@ ecmEnergy=13000.
 maxEvents=10000
 skipEvents=0
 randomSeed=123456 
-outputEVNTFile=EVNT.pool.root
+outputEVNTFile=EVNT.HepMC
 
 
 workingDir=`pwd`
