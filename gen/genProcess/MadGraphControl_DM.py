@@ -174,3 +174,4 @@ testSeq.TestHepMC.MaxVtxDisp = 100000000 #in mm
 testSeq.TestHepMC.MaxNonG4Energy = 100000000 #in MeV
 #generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi), (~chi- > phi1- ~Psi~) 
 output ppTOchichi_13TeV
+launch ppTPchichi_13TeV
