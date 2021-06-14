@@ -172,3 +172,5 @@ genSeq.Pythia8.Commands += ["Main:timesAllowErrors = 60000"]
 testSeq.TestHepMC.MaxTransVtxDisp = 100000000 #in mm
 testSeq.TestHepMC.MaxVtxDisp = 100000000 #in mm
 testSeq.TestHepMC.MaxNonG4Energy = 100000000 #in MeV
+#generate p p > ~chi+ ~chi-, (~chi+ > phi1+ ~Psi), (~chi- > phi1- ~Psi~) 
+output ppTOchichi_13TeV
