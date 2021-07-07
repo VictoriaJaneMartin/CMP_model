@@ -13,7 +13,7 @@ athAlgSeq += CfgMgr.AnalysisAlg()                               #adds an instanc
 #---- Options you could specify on command line -----
 #jps.AthenaCommonFlags.EvtMax=-1                          #set on command-line with: --evtMax=-1
 #jps.AthenaCommonFlags.SkipEvents=0                       #set on command-line with: --skipEvents=0
-jps.AthenaCommonFlags.FilesInput = ["/eos/user/j/jdykstra/CMP_model/analysis/source/DAOD_PASSTHR.DAOD.root"]        #set on command-line with: --filesInput=...
+jps.AthenaCommonFlags.FilesInput = ["/afs/cern.ch/user/j/jdykstra/public/CMP_model/analysis/source/DAOD_PASSTHR.DAOD.root"]        #set on command-line with: --filesInput=...
 #jps.AthenaCommonFlags.FilesInput = ["/afs/cern.ch/work/l/lprincip/private/workingDM/oldAnalysis/inputFile/DAOD_PASSTHR.20200312_1000evts.rightNum.pool.root"]
 
 #include("AthAnalysisBaseComps/SuppressLogging.py")              #Optional include to suppress as much athena output as possible. Keep at bottom of joboptions so that it doesn't suppress the logging of the things you have configured above
